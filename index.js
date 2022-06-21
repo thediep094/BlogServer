@@ -20,12 +20,11 @@ const connectDB = async () => {
 		console.log('MongoDB connected sucessfully')
 	} catch (error) {
 		console.log(error.message)
-		process.exit(1)
 	}
 }
 
 
 connectDB()
-server.listen(process.env.PORT).then(({ url }) => {
+server.listen(process.env.PORT || 4000).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
 });
