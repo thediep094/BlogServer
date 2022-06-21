@@ -26,7 +26,7 @@ const connectDB = async () => {
 
 
 connectDB()
-
-server.listen().then(({ url }) => {
+port = process.env.PORT || 80
+server.listen({port}).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
 });
